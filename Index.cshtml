@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página en ASP.NET</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#"><img src="images/Logo JKALq-01-01.png"></a>
+                </div>
+                <div class="menu-toggle">&#9776;</div>
+                <!-- Enlaces de navegación -->
+                <div class="icons">
+                    
+                    <a href="#about">Sobre mí</a>
+                    <a href="#services">Servicios</a>
+                    <a href="#contact">Contacto</a>
+                <!-- Menú desplegable -->
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Más
+                        <i class="arrow-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#gallery">Galería</a>
+                        <a href="#team">Equipo</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
+                </div>
+                
+                </div>
+                
+            </div>
+            
+        </nav>
+    </header>
+
+
+    <script>
+        // Función para alternar la clase "open" en el menú
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.icons'); // Seleccionar el menú
+            menu.classList.toggle('open'); // Alternar la clase "open"
+        });
+                document.querySelectorAll('.icons a').forEach(link => {
+            link.addEventListener('click', function() {
+                const menu = document.querySelector('.icons');
+                menu.classList.remove('open'); // Cierra el menú al hacer clic en un enlace
+            });
+        });
+
+    </script>
+
+
+
+</body>
+</html>
