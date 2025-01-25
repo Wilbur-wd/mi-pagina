@@ -1,0 +1,174 @@
+﻿body {
+    body
+
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background: #0078d7;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #333;
+    margin: 0;
+}
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+            nav ul li a:hover {
+                text-decoration: underline;
+            }
+
+section {
+    padding: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: white;
+}
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333; /* Fondo gris oscuro */
+    padding: 0.5rem 0;
+    //border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+    /* Enlaces de navegación y botones */
+    .navbar a, .dropbtn {
+        background-color: transparent; /* Fondo transparente */
+        color: white;
+        padding: 0.8rem 1.5rem; /* Más espacio para centrar mejor */
+        border: none;
+        border-radius: 10px; /* Esquinas redondeadas */
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        display: flex; /* Cambio importante: usar flexbox */
+        align-items: center; /* Centrar verticalmente */
+        justify-content: center; /* Centrar horizontalmente */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+
+
+        /* Hover */
+        .navbar a:hover, .dropbtn:hover {
+            background-color: #575757; /* Gris más claro al pasar el mouse */
+            transform: scale(1.05); /* Efecto de aumento */
+        }
+/* Ajustes específicos para el botón "Más" */
+.dropbtn {
+    display: flex; /* Usa flexbox para el botón */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    height: 100%; /* Asegura que el botón ocupe toda la altura de la barra de navegación */
+    padding: 0.8rem 1.5rem; /* Ajusta el padding si es necesario */
+    line-height: normal; /* Asegura que el texto no se desplace hacia arriba */
+}
+
+
+
+/* Menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444; /* Fondo gris más claro */
+    border-radius: 12px; /* Bordes redondeados */
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    z-index: 1;
+    overflow: hidden;
+}
+
+    /* Enlaces dentro del menú desplegable */
+    /* Elementos dentro del menú desplegable */
+    .dropdown-content a {
+        color: white;
+        padding: 0.8rem 1rem; /* Más espacio para centrar mejor */
+        text-decoration: none;
+        display: flex; /* Usar flexbox */
+        align-items: center; /* Centrar verticalmente */
+        justify-content: flex-start; /* Alinear a la izquierda */
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+
+        .dropdown-content a:hover {
+            background-color: #575757; /* Gris claro al pasar el mouse */
+            color: white;
+        }
+
+/* Mostrar el menú desplegable al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Flecha hacia abajo */
+.arrow-down {
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 8px;
+    transform: rotate(40deg);
+    transition: transform 0.3s ease;
+}
+
+.dropbtn:hover .arrow-down {
+    transform: rotate(45deg) translateY(2px); /* Movimiento sutil al pasar el mouse */
+}
+
+/* Estilo del logo */
+.logo img {
+    height: 40px; /* Ajusta el tamaño del logo */
+    margin-right: 1rem; /* Espaciado entre el logo y los enlaces */
+    vertical-align: middle;
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover, .dropbtn:hover {
+    background-color: #575757; /* Gris más claro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Estilo específico para evitar que el logo reciba el efecto hover */
+.logo img:hover {
+    transform: none; /* Quita el efecto de escala al pasar el mouse sobre el logo */
+}
+
+/* También puedes eliminar el fondo del logo cuando está en un enlace */
+.logo a:hover {
+    background-color: transparent; /* Asegura que el logo no tenga un fondo cuando se hace hover */
+}
