@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página en ASP.NET</title>
+    <link rel="stylesheet" href="css/StyleSheet.css?v=3.0">
+
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#"><img src="images/Logo JKALq-01-01.png"></a>
+                </div>
+                <div class="menu-toggle">&#9776;</div>
+                <!-- Enlaces de navegación -->
+                <div class="icons">
+                    
+                    <a href="#about">Sobre mí</a>
+                    <a href="#services">Servicios</a>
+                    <a href="#contact">Contacto</a>
+                <!-- Menú desplegable -->
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Más
+                        <i class="arrow-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#gallery">Galería</a>
+                        <a href="#team">Equipo</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
+                </div>
+                
+                </div>
+                
+            </div>
+            
+        </nav>
+    </header>
+
+
+    <div class="table-responsive">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Birth Date</th>
+                            <th>Location</th>
+                            <th>Profession</th>
+                            <th>Net Worth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="images/u1.png" alt="User 1"></td>
+                            <td>Jhon Due</td>
+                            <td>28</td>
+                            <td>11 Oct, 2022</td>
+                            <td>New York</td>
+                            <td><span class="badge red">Web Developer</span></td>
+                            <td>$100000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><img src="images/u2.png" alt="User 2"> </td>
+                        <td>Jane Smith</td>
+                            <td>32</td>
+                            <td>19 Aug, 2020</td>
+                            <td>London</td>
+                            <td><span class="badge green">Software Engineer</span></td>
+                            <td>$200000</td>
+                        </tr>
+                        <!-- Agrega más filas aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    
+
+    <script>
+        // Función para alternar la clase "open" en el menú
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.icons'); // Seleccionar el menú
+            menu.classList.toggle('open'); // Alternar la clase "open"
+        });
+                document.querySelectorAll('.icons a').forEach(link => {
+            link.addEventListener('click', function() {
+                const menu = document.querySelector('.icons');
+                menu.classList.remove('open'); // Cierra el menú al hacer clic en un enlace
+            });
+        });
+
+        
+
+    </script>
+
+
+
+</body>
+</html>

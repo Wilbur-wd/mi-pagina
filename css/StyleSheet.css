@@ -1,69 +1,55 @@
-ï»¿body {
-    body
-
-{
+* {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f9;
-    color: #333;
+    box-sizing: border-box;
 }
 
 header {
-    background: #0078d7;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+    background-color: #333; /* Fondo gris oscuro */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    transition: all .50s ease;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+/* Fondo general */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, white, burlywood);
     display: flex;
     justify-content: center;
-    background: #333;
-    margin: 0;
+    align-items: center;
+    height: 100vh;
 }
-
-    nav ul li {
-        margin: 0 1rem;
-    }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-            nav ul li a:hover {
-                text-decoration: underline;
-            }
 
 section {
-    padding: 2rem;
-    border-bottom: 1px solid #ddd;
+    padding: 200px 30px; /* Espacio alrededor del contenido */
+    margin-top: 50px; /* Ajusta según la altura de tu barra */
+    
 }
 
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #333;
-    color: white;
-}
-/* Barra de navegaciÃ³n */
-.navbar {
+
+
+    /* Barra de navegación */
+    .navbar {
     display: flex;
+    margin: 0 25px;
     justify-content: center;
     background-color: #333; /* Fondo gris oscuro */
-    padding: 0.5rem 0;
-    //border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
 }
 
-    /* Enlaces de navegaciÃ³n y botones */
-    .navbar a, .dropbtn {
+    /* Enlaces de navegación y botones */
+    .navbar a, .dropbtn, .icons{
         background-color: transparent; /* Fondo transparente */
         color: white;
-        padding: 0.8rem 1.5rem; /* MÃ¡s espacio para centrar mejor */
+        padding: 0.8rem 1.8rem; /* Más espacio para centrar mejor */
         border: none;
         border-radius: 10px; /* Esquinas redondeadas */
         text-decoration: none;
@@ -75,26 +61,26 @@ footer {
         transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-
-
         /* Hover */
         .navbar a:hover, .dropbtn:hover {
-            background-color: #575757; /* Gris mÃ¡s claro al pasar el mouse */
+            color: burlywood;
             transform: scale(1.05); /* Efecto de aumento */
         }
-/* Ajustes especÃ­ficos para el botÃ³n "MÃ¡s" */
+
+
+/* Ajustes específicos para el botón "Más" */
 .dropbtn {
-    display: flex; /* Usa flexbox para el botÃ³n */
+    display: flex; /* Usa flexbox para el botón */
     align-items: center; /* Centra verticalmente el contenido */
     justify-content: center; /* Centra horizontalmente el contenido */
-    height: 100%; /* Asegura que el botÃ³n ocupe toda la altura de la barra de navegaciÃ³n */
+    height: 100%; /* Asegura que el botón ocupe toda la altura de la barra de navegación */
     padding: 0.8rem 1.5rem; /* Ajusta el padding si es necesario */
     line-height: normal; /* Asegura que el texto no se desplace hacia arriba */
 }
 
 
 
-/* MenÃº desplegable */
+/* Menú desplegable */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -103,7 +89,7 @@ footer {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #444; /* Fondo gris mÃ¡s claro */
+    background-color: #444; /* Fondo gris más claro */
     border-radius: 12px; /* Bordes redondeados */
     min-width: 160px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
@@ -111,11 +97,10 @@ footer {
     overflow: hidden;
 }
 
-    /* Enlaces dentro del menÃº desplegable */
-    /* Elementos dentro del menÃº desplegable */
+    /* Elementos dentro del menú desplegable */
     .dropdown-content a {
         color: white;
-        padding: 0.8rem 1rem; /* MÃ¡s espacio para centrar mejor */
+        padding: 0.8rem 1rem; /* Más espacio para centrar mejor */
         text-decoration: none;
         display: flex; /* Usar flexbox */
         align-items: center; /* Centrar verticalmente */
@@ -129,7 +114,7 @@ footer {
             color: white;
         }
 
-/* Mostrar el menÃº desplegable al pasar el mouse */
+/* Mostrar el menú desplegable al pasar el mouse */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -149,26 +134,184 @@ footer {
     transform: rotate(45deg) translateY(2px); /* Movimiento sutil al pasar el mouse */
 }
 
-/* Estilo del logo */
-.logo img {
-    height: 40px; /* Ajusta el tamaÃ±o del logo */
-    margin-right: 1rem; /* Espaciado entre el logo y los enlaces */
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;  
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    height: 100%; /* Asegura que el botón ocupe toda la altura de la barra de navegación */
+    padding: 0.8rem 1.5rem; /* Ajusta el padding si es necesario */
+    line-height: normal; /* Asegura que el texto no se desplace hacia arriba */
+}
+
+/* Hover */
+    .menu-toggle:hover {
+        color: burlywood;
+        transform: scale(1.05); /* Efecto de aumento */
+    }
+
+
+
+
+@media(max-width: 1770px){
+    header{
+        padding: 5px 4%;
+    }
+    
+}
+
+
+@media(max-width: 950px) {
+    .icons{
+        position: absolute;
+        width: 100%;
+        height: 50vh;
+        padding: 100px 50px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(32px);
+        transition: all .6s ease-in-out;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white; /* Fondo gris más claro */
+        border-radius: 12px; /* Bordes redondeados */
+        min-width: 160px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .menu-toggle {
+        display: block;
+        width: auto;
+        padding-left: 110px;
+        padding-right: 0px;
+        z-index: 1100; /* Asegúrate de que esté encima del menú */
+    }
+    * {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: content-box;
+    }
+    .logo img {
+        width: 100%;
+        height: auto;
+        z-index: 1100; /* Asegúrate de que esté encima del menú */
+    }
+    .icons a, .dropbtn {
+        color: black;
+        font-size: 1.7rem;
+    }
+    .icons.open{
+        left: 0;
+    }
+
+    .table-responsive {
+        overflow-x: auto; /* Activa el scroll horizontal */
+        
+    }
+    
+}
+
+
+
+
+
+
+/* Contenedor de la tabla */
+.table-container {
+    width: 100%;
+    min-width: 700px; /* Esto asegura que el contenido sea más ancho que el contenedor */
+    max-width: 1200px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Tabla general */
+table {
+    width: 100%;
+    min-width: 700px; /* Esto asegura que el contenido sea más ancho que el contenedor */
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Encabezado */
+thead {
+    background-color: #f5f5f5;
+}
+
+    thead th {
+        padding: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #555;
+    }
+
+/* Filas */
+tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+/* Celdas */
+td {
+    padding: 18px;
     vertical-align: middle;
-    border-radius: 5px; /* Bordes redondeados opcionales */
-    transition: transform 0.3s ease;
+    font-size: 14px;
+    color: #333;
 }
 
-.navbar a:hover, .dropbtn:hover {
-    background-color: #575757; /* Gris mÃ¡s claro al pasar el mouse */
-    transform: scale(1.05); /* Efecto de aumento */
+    /* Imágenes de usuario */
+    td img {
+        width: 60px;
+        height: 50px;
+        border-radius: 30%;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+/* Badges (etiquetas de colores) */
+.badge {
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
 }
 
-/* Estilo especÃ­fico para evitar que el logo reciba el efecto hover */
-.logo img:hover {
-    transform: none; /* Quita el efecto de escala al pasar el mouse sobre el logo */
-}
+    .badge.red {
+        background-color: #ff6b6b;
+    }
 
-/* TambiÃ©n puedes eliminar el fondo del logo cuando estÃ¡ en un enlace */
-.logo a:hover {
-    background-color: transparent; /* Asegura que el logo no tenga un fondo cuando se hace hover */
-}
+    .badge.green {
+        background-color: #28a745;
+    }
+
+    .badge.yellow {
+        background-color: #ffc107;
+    }
+
+    .badge.blue {
+        background-color: #007bff;
+    }
